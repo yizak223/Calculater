@@ -2,26 +2,26 @@ document.body.innerHTML+=
 `
 <article>
     <div id="calulator">
-        <div id="result"> </div>
-       
+        <div id="result"></div>
+
         <div id="butns_numbers_math">
             <div id="numbers">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button> 
-                <button>0</button> 
+                <button class='press_num'>7</button>
+                <button class='press_num'>8</button>
+                <button class='press_num'>9</button>
+                <button class='press_num'>4</button>
+                <button class='press_num'>5</button>
+                <button class='press_num'>6</button>
+                <button class='press_num'>1</button>
+                <button class='press_num'>2</button>
+                <button class='press_num'>3</button> 
+                <button class='press_num'>0</button> 
             </div>
             <div id="btn_math">
-                <button>X</button>
-                <button>/</button>
-                <button>+</button>
-                <button>-</button>
+                <button class='press_operator'>X</button>
+                <button class='press_operator'>/</button>
+                <button class='press_operator'>+</button>
+                <button class='press_operator'>-</button>
                 <div id="equal">
                     <button>=</button> 
                 </div>
@@ -39,4 +39,31 @@ const btn_math=document.querySelector('#btn_math')
 const equal=document.querySelector('#equal')
 const result=document.querySelector('#result')
 
+const PRESS_NUM=document.querySelectorAll('.press_num')
+const PRESS_OPERATOR=document.querySelectorAll('.press_operator')
 
+for (const num of PRESS_NUM) {
+        result.innerHTML=
+        `<span id='numArea'></span>
+        <span id='operatorArea'></span>`
+    num.addEventListener('click',()=>
+    {
+         numArea.innerHTML+=
+        `${num.textContent}` 
+    }) 
+}
+
+let counter=0
+for (const operator of PRESS_OPERATOR) {
+
+    operator.addEventListener('click',()=>
+    {
+        operatorArea.innerHTML=
+        `${operator.textContent}` 
+ 
+    })
+ 
+}
+  
+
+    
