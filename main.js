@@ -27,7 +27,7 @@ document.body.innerHTML+=
                 <button class='press_operator'>+</button>
                 <button class='press_operator'>-</button>
                 <div id="equal">
-                    <button>=</button> 
+                    <button id='equal_operator'>=</button> 
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@ rst.addEventListener('click',()=>{
     result.innerHTML=
         `<span id='numArea'></span>`
 })
-console.log(numArea.textContent);
+
 dlt.addEventListener('click',()=>{
     if(!isNaN(numArea.textContent/10))
     {
@@ -77,6 +77,18 @@ dlt.addEventListener('click',()=>{
     else{   
         let stringNum=`${numArea.textContent}`
         numArea.textContent=stringNum.substring(0,stringNum.length-1)
+    }
+})
+
+equal_operator.addEventListener('click',()=>{
+    let stringNumForResult=`${numArea.textContent}`
+    switch (stringNumForResult.indexOf('X')) {
+        case value:
+            
+            break;
+    
+        default:
+            break;
     }
 })
 
