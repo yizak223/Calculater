@@ -1,0 +1,51 @@
+#calulator{
+    width: 32vw;
+    height: 50vh;
+    border: solid grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(72, 23, 189, 0.316);
+}
+#result{
+    width: 23vw;
+    height: 10vh;
+    border: solid gray;
+    align-self: center;
+    background-color: rgb(177, 255, 158);
+}
+button{
+    width: 8vw;
+    height: 8vh;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+#numbers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#btn_math{
+    width: 15vw;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+#btn_math button{
+    width: 2vw;
+
+}
+#equal{
+    width: 4vw;
+    height: 8vh;
+}
+#equal button{
+    width: 4vw;
+    height: 8vh;
+}
+button:hover{
+    background-color: blue;
+}
+#butns_math{
+    display: flex;
+}
