@@ -8,7 +8,7 @@
     background-color: rgba(72, 23, 189, 0.316);
 }
 #result{
-    width: 23vw;
+    width: 28vw;
     height: 10vh;
     border: solid gray;
     align-self: center;
@@ -46,6 +46,6 @@ button{
 button:hover{
     background-color: blue;
 }
-#butns_math{
+#butns_numbers_math{
     display: flex;
 }
