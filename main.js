@@ -123,14 +123,24 @@ rst.addEventListener('click',()=>{
 })
 
 dlt.addEventListener('click',()=>{
-    if(!isNaN(numArea.textContent/10))
-    {
-      numArea.textContent=Math.floor(numArea.textContent/10)  
-    }
-    else{   
-        let stringNum=`${numArea.textContent}`
-        numArea.textContent=stringNum.substring(0,stringNum.length-1)
-    }
+    // if(!isNaN(numArea.textContent/10))
+    // {
+      numArea.textContent=Math.floor(numArea.textContent/10) 
+
+    // }
+    // else{   
+    //     let stringNum=`${numArea.textContent}`
+    //     console.log(stringNum);
+    //     numArea.textContent=stringNum.substring(0,stringNum.length-1)
+    // }
+    if(isThereOperator==false){
+        // let stringNum=`${numArea.textContent}`
+        firstnum=Math.floor(firstnum/10)
+     }
+     else{
+        // let stringNum=`${numArea.textContent}`
+         secondnum=Math.floor(secondnum/10)
+     }
 })
 
 
