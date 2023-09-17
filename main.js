@@ -52,6 +52,8 @@ const PRESS_OPERATOR=document.querySelectorAll('.press_operator')
 
 let firstnum='';
 let secondnum='';
+isThereOperator=false;
+
 for (const num of PRESS_NUM) {
     result.innerHTML=
         `<span id='numArea'></span>`
@@ -59,7 +61,14 @@ for (const num of PRESS_NUM) {
     {
         numArea.innerHTML+=
         `${num.textContent}`  
-        firstnum+=num.textContent
+        if(isThereOperator==false){
+           firstnum+=num.textContent 
+        }
+        else{
+            secondnum+=num.textContent 
+        }
+        console.log(firstnum);
+        console.log(secondnum);
     }) 
 }
 
@@ -70,12 +79,40 @@ for (const operator of PRESS_OPERATOR) {
             numArea.innerHTML+=
             `${operator.textContent}` 
             myoperator=operator.textContent
+            isThereOperator=true
             console.log(myoperator);
         })
 }
 
 equal_operator.addEventListener('click',()=>{
-
+    switch (myoperator) {
+        case 'X':
+                numArea.innerHTML=
+                `${+firstnum*+secondnum}`  
+                firstnum='';
+                secondnum='';
+            return;
+        case '-':
+                numArea.innerHTML=
+                `${+firstnum-+secondnum}` 
+                firstnum='';
+                secondnum=''; 
+            return;
+        case '+':
+                numArea.innerHTML=
+                `${+firstnum+(+secondnum)}` 
+                firstnum='';
+                secondnum='';  
+            return;
+        case '/':
+                numArea.innerHTML=
+                `${+firstnum/+secondnum}` 
+                firstnum='';
+                secondnum='';  
+            return;
+        default:
+            break;
+    }
 })
 rst.addEventListener('click',()=>{
     result.innerHTML=
@@ -93,17 +130,6 @@ dlt.addEventListener('click',()=>{
     }
 })
 
-equal_operator.addEventListener('click',()=>{
-    let stringNumForResult=`${numArea.textContent}`
-    switch (stringNumForResult.indexOf('X')) {
-        case value:
-            
-            break;
-    
-        default:
-            break;
-    }
-})
 
 // let isThereOperator=false
 
