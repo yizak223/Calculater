@@ -117,6 +117,9 @@ equal_operator.addEventListener('click',()=>{
 rst.addEventListener('click',()=>{
     result.innerHTML=
         `<span id='numArea'></span>`
+        firstnum='';
+        secondnum=''; 
+        isThereOperator=false
 })
 
 dlt.addEventListener('click',()=>{
