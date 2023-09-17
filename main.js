@@ -16,9 +16,11 @@ document.body.innerHTML+=
                 <button class='press_num'>2</button>
                 <button class='press_num'>3</button> 
                 <button class='press_num'>0</button> 
-                <div>
+                <div id='add_btn'>
                     <button id='dlt'>delete</button>
                     <button id='rst'>reset</button>
+                    <button class='save_ans'>Ans</button>
+                    <button class='press_num'>.</button>
                 </div>
             </div>
             <div id="btn_math">
@@ -26,6 +28,8 @@ document.body.innerHTML+=
                 <button class='press_operator'>/</button>
                 <button class='press_operator'>+</button>
                 <button class='press_operator'>-</button>
+                
+                
                 <div id="equal">
                     <button id='equal_operator'>=</button> 
                 </div>
@@ -46,6 +50,8 @@ const result=document.querySelector('#result')
 const PRESS_NUM=document.querySelectorAll('.press_num')
 const PRESS_OPERATOR=document.querySelectorAll('.press_operator')
 
+let firstnum='';
+let secondnum='';
 for (const num of PRESS_NUM) {
     result.innerHTML=
         `<span id='numArea'></span>`
@@ -53,17 +59,24 @@ for (const num of PRESS_NUM) {
     {
         numArea.innerHTML+=
         `${num.textContent}`  
+        firstnum+=num.textContent
     }) 
 }
 
+let myoperator;
 for (const operator of PRESS_OPERATOR) {
     operator.addEventListener('click',()=>
     {
             numArea.innerHTML+=
             `${operator.textContent}` 
+            myoperator=operator.textContent
+            console.log(myoperator);
         })
 }
 
+equal_operator.addEventListener('click',()=>{
+
+})
 rst.addEventListener('click',()=>{
     result.innerHTML=
         `<span id='numArea'></span>`
