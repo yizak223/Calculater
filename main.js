@@ -17,8 +17,8 @@ document.body.innerHTML+=
                 <button class='press_num'>3</button> 
                 <button class='press_num'>0</button> 
                 <div id='add_btn'>
-                    <button id='dlt'>delete</button>
-                    <button id='rst'>reset</button>
+                    <button id='dlt'>dlt</button>
+                    <button id='rst'>rst</button>
                     <button class='save_ans'>Ans</button>
                     <button class='press_num'>.</button>
                 </div>

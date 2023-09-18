@@ -1,18 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1rem;
+    background-color: #ff0404ab;
+}
+
 #calulator{
     width: 32vw;
-    height: 50vh;
+    height: 65vh;
     border: solid grey;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: rgba(72, 23, 189, 0.316);
+    justify-content: space-evenly;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 12px 10px 10px 5px rgba(0, 0, 0, 0.3);
 }
 #result{
     width: 28vw;
-    height: 10vh;
+    height: 12vh;
     border: solid gray;
+    border-radius: 10px ;
     align-self: center;
-    background-color: rgba(51, 253, 0, 0.515);
+    background-color: rgba(59, 208, 22, 0.515);
 }
 button{
     width: 8vw;
@@ -34,12 +46,13 @@ button{
 #btn_math{
     width: 15vw;
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3vh;
 }
 #btn_math button{
-    width: 2vw;
-
+    width: 4vw;
+    height: 6vh;
 }
 #equal{
     width: 4vw;
@@ -60,3 +73,21 @@ button:hover{
 #add_btn button{
     width: 4vw;
 }
+@media screen and (max-width:601px)
+    {  
+        #calulator{
+            width: 75vw;
+        }
+        button{
+            width: 18vw;
+        }
+        #result{
+            width: 60vw;
+        }
+        #add_btn button{
+            width: 9vw;
+        }
+        #btn_math button{
+            width: 10vw;
+        }
+    }
