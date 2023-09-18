@@ -19,7 +19,7 @@ document.body.innerHTML+=
                 <div id='add_btn'>
                     <button id='dlt'>dlt</button>
                     <button id='rst'>rst</button>
-                    <button class='save_ans'>Ans</button>
+                    <button id='save_ans'>Ans</button>
                     <button class='press_num'>.</button>
                 </div>
             </div>
@@ -89,25 +89,25 @@ equal_operator.addEventListener('click',()=>{
         case 'X':
                 numArea.innerHTML=
                 `${+firstnum*+secondnum}`  
-                firstnum='';
+                firstnum=+firstnum*+secondnum;
                 secondnum='';
             return;
         case '-':
                 numArea.innerHTML=
                 `${+firstnum-+secondnum}` 
-                firstnum='';
+                firstnum=+firstnum-+secondnum;
                 secondnum=''; 
             return;
         case '+':
                 numArea.innerHTML=
                 `${+firstnum+(+secondnum)}` 
-                firstnum='';
+                firstnum=+firstnum+(+secondnum);
                 secondnum='';  
             return;
         case '/':
                 numArea.innerHTML=
                 `${+firstnum/+secondnum}` 
-                firstnum='';
+                firstnum=+firstnum/+secondnum;
                 secondnum='';  
             return;
         default:
@@ -123,115 +123,26 @@ rst.addEventListener('click',()=>{
 })
 
 dlt.addEventListener('click',()=>{
-    // if(!isNaN(numArea.textContent/10))
-    // {
+    if(!isNaN(numArea.textContent/10))
+    {
       numArea.textContent=Math.floor(numArea.textContent/10) 
 
-    // }
-    // else{   
-    //     let stringNum=`${numArea.textContent}`
-    //     console.log(stringNum);
-    //     numArea.textContent=stringNum.substring(0,stringNum.length-1)
-    // }
+    }
+    else{   
+        let stringNum=`${numArea.textContent}`
+        console.log(stringNum);
+        numArea.textContent=stringNum.substring(0,stringNum.length-1)
+    }
     if(isThereOperator==false){
-        // let stringNum=`${numArea.textContent}`
         firstnum=Math.floor(firstnum/10)
      }
      else{
-        // let stringNum=`${numArea.textContent}`
          secondnum=Math.floor(secondnum/10)
      }
 })
 
-
-// let isThereOperator=false
-
-// for (const num of PRESS_NUM) {
-
-//         result.innerHTML=
-//         `<span id='numArea'></span>`
-//     num.addEventListener('click',()=>
-//     {
-//         numArea.innerHTML+=
-//         `${num.textContent}`  
-//     }) 
-// }
-
-// let c=0
-// for (const operator of PRESS_OPERATOR) {
-
-//     operator.addEventListener('click',()=>
-//     {
-//         // if(isThereOperator==false)
-//         // {
-//             numArea.innerHTML=
-//             `${operator.textContent}` 
-//             isThereOperator=true  
-//             // if (isThereOperator==true) {
-//             //     result.innerHTML+=
-//             // `<span id=secondNumArea${c++}></span>`
-//             // }
-//         },{once:true})
-       
-
-//             for (const num of PRESS_NUM) {
-//                 // removeEventListener('click',operator)
-//                 num.addEventListener('click',()=>
-//                 {
-//                     secondNumArea0.innerHTML+=
-//                     `${num.textContent}`  
-//                 },{once:true}) 
-//             }
-//         }
-    
-
-
-  
-
-
-
-
-
-
-
-// if (isThereOperator==false) {
-//     for (const num of PRESS_NUM) {
-//                 result.innerHTML=
-//                 `<span id='numArea'></span>
-//                 <span id='operatorArea'></span>`
-//             num.addEventListener('click',()=>
-//                 {
-//                     console.log(isThereOperator);
-//                     numArea.innerHTML+=
-//                     `${num.textContent}` 
-//                 }) 
-//             }
-//         }
-// else if(isThereOperator){
-//     console.log(isThereOperator);
-//     for (const num of PRESS_NUM) {
-//     result.innerHTML+=
-//     `<span id='secondNumArea'></span>`
-//     num.addEventListener('click',()=>
-//     {
-//         secondNumArea.innerHTML+=
-//         `${num.textContent}` 
-//     })
-//     }
-// }     
-    
-
-
-    
-
-// result.innerHTML=
-// `<span id='numArea'></span>
-// <span id='operatorArea'></span>`
-// num.addEventListener('click',()=>
-// {
-//  console.log(isThereOperator);
-//     numArea.innerHTML+=
-//     `${num.textContent}` 
-// })
-
+save_ans.addEventListener('click',()=>{
+    numArea.innerHTML=
+        `<span id='numArea'>ANS</span>` 
+})
     
