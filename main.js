@@ -44,6 +44,7 @@ const calulator=document.querySelector('#calulator')
 const butns_numbers_math=document.querySelector('#butns_numbers_math')
 const numbers=document.querySelector('#numbers')
 const btn_math=document.querySelector('#btn_math')
+
 const equal=document.querySelector('#equal')
 const result=document.querySelector('#result')
 
@@ -84,6 +85,35 @@ for (const operator of PRESS_OPERATOR) {
         })
 }
 
+
+
+dlt.addEventListener('click',()=>{
+    // if(!isNaN(numArea.textContent/10))
+    // {
+    //   numArea.textContent=Math.floor(numArea.textContent/10) 
+
+    // }
+    // else{   
+        let stringNum=`${numArea.textContent}`
+        console.log(stringNum);
+        numArea.textContent=stringNum.substring(0,stringNum.length-1)
+    // }
+    if(isThereOperator==false){
+        firstnum=Math.floor(firstnum/10)
+     }
+     else{
+         secondnum=Math.floor(secondnum/10)
+     }
+})
+
+rst.addEventListener('click',()=>{
+    result.innerHTML=
+        `<span id='numArea'></span>`
+        firstnum='';
+        secondnum=''; 
+        isThereOperator=false
+})
+
 equal_operator.addEventListener('click',()=>{
     switch (myoperator) {
         case 'X':
@@ -114,35 +144,10 @@ equal_operator.addEventListener('click',()=>{
             break;
     }
 })
-rst.addEventListener('click',()=>{
-    result.innerHTML=
-        `<span id='numArea'></span>`
-        firstnum='';
-        secondnum=''; 
-        isThereOperator=false
-})
-
-dlt.addEventListener('click',()=>{
-    if(!isNaN(numArea.textContent/10))
-    {
-      numArea.textContent=Math.floor(numArea.textContent/10) 
-
-    }
-    else{   
-        let stringNum=`${numArea.textContent}`
-        console.log(stringNum);
-        numArea.textContent=stringNum.substring(0,stringNum.length-1)
-    }
-    if(isThereOperator==false){
-        firstnum=Math.floor(firstnum/10)
-     }
-     else{
-         secondnum=Math.floor(secondnum/10)
-     }
-})
 
 save_ans.addEventListener('click',()=>{
-    numArea.innerHTML=
-        `<span id='numArea'>ANS</span>` 
+    let ans=firstnum;
+    numArea.innerHTML+=
+        `<span id='numArea'>ans</span>` 
 })
     
