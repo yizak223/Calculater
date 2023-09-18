@@ -73,6 +73,10 @@ button:hover{
 #add_btn button{
     width: 4vw;
 }
+#numArea{
+    color: #04ffc9;
+    font-size: large;
+}
 @media screen and (max-width:601px)
     {  
         #calulator{
