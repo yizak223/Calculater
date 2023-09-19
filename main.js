@@ -65,11 +65,6 @@ for (const num of PRESS_NUM) {
         `${num.textContent}`  
         let stringNum=String(numArea.textContent)
         let operatorIndex=stringNum.indexOf(myoperator)
-        if (stringNum.indexOf('.')==0) {
-            alert('what are you doing?')
-            result.innerHTML=
-            `<span id='numArea'></span>`
-        }
         if(operatorIndex==-1){
            firstnum+=num.textContent 
         }
