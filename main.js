@@ -55,6 +55,7 @@ let firstnum='';
 let secondnum='';
 isThereOperator=false;
 
+
 for (const num of PRESS_NUM) {
     result.innerHTML=
         `<span id='numArea'></span>`
@@ -85,6 +86,14 @@ for (const operator of PRESS_OPERATOR) {
             myoperator=operator.textContent
             isThereOperator=true
             console.log(myoperator);
+            let stringNum=String(numArea.textContent)
+            let operatorIndex=stringNum.indexOf(myoperator)
+            console.log(operatorIndex);
+            if (operatorIndex==0) {
+                alert('cant do that')
+                result.innerHTML=
+                `<span id='numArea'></span>`
+            }
         })
 }
 
