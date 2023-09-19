@@ -159,8 +159,9 @@ equal_operator.addEventListener('click',()=>{
 })
 
 save_ans.addEventListener('click',()=>{
-    let ans=firstnum;
-    numArea.innerHTML+=
-        `<span id='numArea'>ans</span>` 
+    alert('still building...')
+    // let ans=firstnum;
+    // numArea.innerHTML+=
+    //     `<span id='numArea'>ans</span>` 
 })
     
