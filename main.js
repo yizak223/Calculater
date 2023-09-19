@@ -62,11 +62,14 @@ for (const num of PRESS_NUM) {
     {
         numArea.innerHTML+=
         `${num.textContent}`  
-        if(isThereOperator==false){
+        let stringNum=String(numArea.textContent)
+        let operatorIndex=stringNum.indexOf(myoperator)
+        if(operatorIndex==-1){
            firstnum+=num.textContent 
         }
         else{
-            secondnum+=num.textContent 
+            let stringNum2=stringNum.substring(operatorIndex+1,stringNum.length)
+            secondnum=Number(stringNum2)
         }
         console.log(firstnum);
         console.log(secondnum);
@@ -85,19 +88,20 @@ for (const operator of PRESS_OPERATOR) {
         })
 }
 
-console.log(Number('1.'));
 
 dlt.addEventListener('click',()=>{
     let stringNum=String(numArea.textContent)
-    if(isThereOperator==false){
+    let operatorIndex=stringNum.indexOf(myoperator)
+    if(operatorIndex==-1){
         console.log(stringNum);
         numArea.textContent=stringNum.substring(0,stringNum.length-1)
         firstnum=Number(numArea.textContent)
+        secondnum="";
      }
      else{
         numArea.textContent=stringNum.substring(0,stringNum.length-1)
-        let operatorIndex=stringNum.indexOf(myoperator)
         let stringNum2=stringNum.substring(operatorIndex+1,stringNum.length-1)
+        console.log(stringNum2);
         secondnum=Number(stringNum2)
      }
 })
