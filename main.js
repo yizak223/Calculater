@@ -85,24 +85,20 @@ for (const operator of PRESS_OPERATOR) {
         })
 }
 
-
+console.log(Number('1.'));
 
 dlt.addEventListener('click',()=>{
-    // if(!isNaN(numArea.textContent/10))
-    // {
-    //   numArea.textContent=Math.floor(numArea.textContent/10) 
-
-    // }
-    // else{   
-        let stringNum=`${numArea.textContent}`
+    let stringNum=String(numArea.textContent)
+    if(isThereOperator==false){
         console.log(stringNum);
         numArea.textContent=stringNum.substring(0,stringNum.length-1)
-    // }
-    if(isThereOperator==false){
-        firstnum=Math.floor(firstnum/10)
+        firstnum=Number(numArea.textContent)
      }
      else{
-         secondnum=Math.floor(secondnum/10)
+        numArea.textContent=stringNum.substring(0,stringNum.length-1)
+        let operatorIndex=stringNum.indexOf(myoperator)
+        let stringNum2=stringNum.substring(operatorIndex+1,stringNum.length-1)
+        secondnum=Number(stringNum2)
      }
 })
 
@@ -121,24 +117,28 @@ equal_operator.addEventListener('click',()=>{
                 `${+firstnum*+secondnum}`  
                 firstnum=+firstnum*+secondnum;
                 secondnum='';
+                isThereOperator=false
             return;
         case '-':
                 numArea.innerHTML=
                 `${+firstnum-+secondnum}` 
                 firstnum=+firstnum-+secondnum;
                 secondnum=''; 
+                isThereOperator=false
             return;
         case '+':
                 numArea.innerHTML=
                 `${+firstnum+(+secondnum)}` 
                 firstnum=+firstnum+(+secondnum);
                 secondnum='';  
+                isThereOperator=false
             return;
         case '/':
                 numArea.innerHTML=
                 `${+firstnum/+secondnum}` 
                 firstnum=+firstnum/+secondnum;
-                secondnum='';  
+                secondnum=''; 
+                isThereOperator=false 
             return;
         default:
             break;
