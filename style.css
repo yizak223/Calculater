@@ -11,8 +11,8 @@ body {
 }
 
 #calulator {
-    width: 30vw;
-    /* height: 65vh; */
+    width: 29vw;
+    height: 60vh;
     /* border: solid grey; */
     display: flex;
     flex-wrap: wrap;
